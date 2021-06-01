@@ -185,16 +185,16 @@ img {
     margin-bottom: 20px;
 }
 
-.offer:last-child {
+/* .offer:last-child {
     margin-bottom: 40px;
-}
+} */
 
 .offer-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 1px solid #F2F3F6;
-    background: #fff url('/img/logo-company.png') no-repeat center / contain;
+    background: #fff url('../img/logo-company.png') no-repeat center / contain;
 }
 
 .offer-title {
@@ -248,6 +248,7 @@ img {
 }
 
 .subscribe-subtitle {
+    min-height: 50px;
     font-size: 18px;
     line-height: 140%;
     margin-top: 0;
@@ -313,22 +314,24 @@ img {
 @media (max-width: 991px) {
 
     .navbar {
+        display: none;
         padding-left: 0;
         padding-right: 0;
         position: absolute;
         left: 0;
-        /* right: 0; */
         top: 0;
         width: 100%;
         height: 100vh;
         min-height: 500px;
         background-color: #fff;
+        opacity: 0;
         transform: translateX(-100%);
-        transition: transform .3s;
+        transition: transform .4s ease-in, opacity .4s ease-in;
     }
 
     .is-open {
-        transform: translateX(0);
+        transform: none;
+        opacity: 1;
     }
 
     .logo-img {
@@ -336,11 +339,11 @@ img {
     }
 
     .burger {
-        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         width: 24px;
         height: 24px;
-        margin-left: auto;
-        /* margin-right: 10px; */
         border: none;
         background-color: transparent;
         background-image: url('../img/menu-burger.svg');
@@ -352,15 +355,13 @@ img {
 
     .close {
         position: absolute;
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         top: 20px;
         right: 20px;
-        /* margin-top: 20px;
-        margin-right: 20px; */
         border: none;
         background-color: transparent;
-        background-image: url('../img/close-basic-black.svg');
+        background-image: url('../img/close-basic-thin.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -417,11 +418,6 @@ img {
 }
 
 @media (max-width: 575px) {
-
-    .close {
-        width: 20px;
-        height: 20px;
-    }
 
     .hero-title {
         font-size: 34px;
