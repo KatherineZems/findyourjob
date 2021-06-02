@@ -3,18 +3,30 @@ const menu = document.querySelector('.navbar')
 const closeMenuButton = document.querySelector('.close')
 
 menuButton.addEventListener('click', (e) => {
-    menu.style.display = 'flex'
+    menu.classList.toggle('visible')
     setTimeout(() => {
         menu.classList.add('is-open')
     }, 100)
 
 })
 
-closeMenuButton.addEventListener('click', (e) => {
-    menu.classList.remove('is-open')
-    setTimeout(() => {
-        menu.style.display = 'none'
-    }, 500)
+menu.addEventListener('click', (e) => {
+    const target = e.target
+
+    if (target === closeMenuButton || target.matches('.menu-link[href^="#"]')) {
+        menu.classList.remove('is-open')
+        setTimeout(() => {
+            menu.classList.toggle('visible')
+        }, 500) 
+    }
+})
+
+
+const heroForm = document.querySelector('.hero-form')
+
+heroForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    window.location.href = 'page.html'
 })
 
 
@@ -62,3 +74,6 @@ subscribeForm.addEventListener('submit', (e) => {
         subscribeSubtitle.textContent = 'Мы отправляем по одному письму в неделю с подходящими вам вакансиями'
     }, 8000)
 })
+
+let vh = window.innerHeight * 0.01
+document.documentElement.style.setProperty('--vh', `${vh}px`)
