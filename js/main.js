@@ -42,9 +42,9 @@ const offer = `
     <span class="offer-salary mb-4 mb-lg-0">70 000 ₽</span>
     <div class="tags-group">
         <span class="tags-label">Требования:</span>
-        <a href="#" class="tag">PHP</a>
-        <a href="#" class="tag">MySQL</a>
-        <a href="#" class="tag">Git</a>
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Git</span>
     </div>
     <a href="page.html" class="more mt-5 mt-lg-0">Подробнее →</a>
 </div>`
@@ -70,9 +70,9 @@ subscribeForm.addEventListener('submit', (e) => {
     subscribeSubtitle.textContent = `E-mail: ${inputValue} успешно подписан на рассылку`
     subscribeForm.reset()
 
-    setTimeout(() => {
-        subscribeSubtitle.textContent = 'Мы отправляем по одному письму в неделю с подходящими вам вакансиями'
-    }, 8000)
+    // setTimeout(() => {
+    //     subscribeSubtitle.textContent = 'Мы отправляем по одному письму в неделю с подходящими вам вакансиями'
+    // }, 8000)
 })
 
 let vh = window.innerHeight * 0.01
